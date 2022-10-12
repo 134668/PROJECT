@@ -14,3 +14,8 @@ G.add_node('J1')
 G.add_node('Mada')
 G.add_node('Phase3')
 G.add_node('ParkingLot')
+
+print(nx.info(G))
+
+nx.draw(G)
+plt.show()
