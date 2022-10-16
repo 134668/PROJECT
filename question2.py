@@ -1,8 +1,8 @@
 graph = {
-    'SportsComplex': [('Siwaka', 450)],
-    'Siwaka':[('Ph.1A', 10), ('Ph.1B', 230)],
-    'Ph.1A':[('Mada', 850), ('Ph.1B', 100)],
-    'Ph.1B':[('Phase2', 112), ('STC', 50)],
+    'StrathmoreSportsComplex': [('Siwaka', 450)],
+    'Siwaka':[('Phase1EntranceA', 10), ('Phase1EntranceB', 230)],
+    'Phase1EntranceA':[('Mada', 850), ('Phase1EntranceB', 100)],
+    'Phase1EntranceB':[('Phase2', 112), ('STC', 50)],
     'STC':[('Phase2', 50), ('ParkingLot', 250)],
     'Phase2':[('J1', 600), ('Phase3', 500), ('STC', 50)],
     'J1':[('Mada', 200)],
@@ -12,10 +12,10 @@ graph = {
     }
 
 H_table = {
-    'SportsComplex': 730,
+    'StrathmoreSportsComplex': 730,
     'Siwaka': 405,
-    'Ph.1A': 380,
-    'Ph.1B': 280,
+    'Phase1EntranceA': 380,
+    'Phase1EntranceB': 280,
     'STC': 213,
     'Phase2': 210,
     'J1': 500,
@@ -34,10 +34,10 @@ def path_h_cost(path):
     return h_cost, last_node
 
 
-# path = [('SportsComplex', 0), ('Siwaka', 100), ('Ph.1B', 500)]
+# path = [('StrathmoreSportsComplex', 0), ('Siwaka', 100), ('Phase1EntranceB', 500)]
 # print(path_h_cost(path))
 
-# path = [('SportsComplex', 0), ('Siwaka', 100), ('Ph.1A', 200)]
+# path = [('SportsComplex', 0), ('Siwaka', 100), ('Phase1EntranceA', 200)]
 # print(path_h_cost(path))
 
 def Greedy_best_search(graph, start, goal):
@@ -59,5 +59,5 @@ def Greedy_best_search(graph, start, goal):
                 new_path.append((node2, cost))
                 queue.append(new_path)
          
-solution = Greedy_best_search(graph, 'SportsComplex', 'ParkingLot')
+solution = Greedy_best_search(graph, 'StrathmoreSportsComplex', 'ParkingLot')
 print('Solution is', solution)
